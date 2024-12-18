@@ -1,0 +1,98 @@
+.body{
+  background-color: #DFE3E2;
+}
+.button p{
+  margin: 1vh 30%;
+  font-size: 2vw;
+}
+.modal{
+}
+.button button{
+  margin-top: 20%;
+  box-shadow: 0 10px 100px rgb(0 0 0 / 100%);
+  border-radius: 50%;
+  height: 14vh;
+  width: 14vh;
+  background-color: #36373A;
+  color: #fff;
+  border: none;
+}
+.bxs-user{
+  font-size: 3vw;
+  color: #06b88a;
+
+}
+.button button:hover{
+  transform: scale(1.1);
+}
+.form{
+  background-color: white;
+}
+.modal-content{
+  background-color: #d6d6d6 !important;
+  color: #000 !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 300;
+}
+.close button{
+  background-color: transparent;
+  border: none;
+  float: right;
+  margin-right: 10px;
+  font-size: 1vh;
+  color: #06b88a;
+}
+.close button:hover{
+  transform: scale(1.1);
+}
+.close{
+  margin-bottom: 3vh;
+  display: grid;
+  grid-template-columns: 100%;
+}
+.bxs-user{
+  background-color: #36373A;
+  padding: 2vh;
+  border-radius: 50%;
+}
+
+.close i{
+  margin-left: 40%;
+  font-size: 5vw;
+}
+
+.inputs{
+  margin: 0 10vh;
+}
+.inputs input{
+  width: 100%;
+  margin: 3vh 0;
+  border-radius: 5px;
+  border: none;
+  color: #000;
+  height: 50px;
+  padding-left: 10px;
+}
+.inputs input:nth-last-child(1){
+  background-color: #06b88a;
+  border: none;
+  width: 100%;
+  color: #fff;
+  margin: 3vh 0;
+  border-radius: 5px;
+}
+.inputs button:hover{
+  transform: scale(1.1);
+}
+.hr hr{
+  margin: 1vh 3vh;
+}
+
+.reg{
+  text-align: center;
+  margin: 2vh 0;
+}
+.reg a{
+  color: black;
+  font-weight: 900;
+}

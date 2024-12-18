@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/static/edit.css">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <title>Edit Records</title>
+</head>
+<body>
+  {% block content %}
+
+<a class="back" href="{{ url_for('viewpackage')}}"><i class='bx bx-arrow-back'></i></a>
+<form method="post">
+  <div class="container">
+    <div class="form-title">
+      <h1>{% block title %} Edit "{{ post['packagename'] }}" {% endblock %}</h1>
+    </div>
+    <div class="inner-container">
+    <div class="form-group">
+        <label for="title">Package Name:</label>
+        <input type="text" required name="packagename" value="{{ request.form['packagename'] or post['packagename'] }}" placeholder="Enter packagename...">
+        </input>
+    </div>
+    <div class="form-group">
+      <label for="title">Price:</label>
+      <input type="number" required name="price" placeholder="5,000php" value="{{ request.form['price'] or post['price'] }}">
+      </input>
+    </div>
+    <div class="form-group">
+      <label for="title">Person</label>
+      <input type="text" required name="person" value="{{ request.form['person'] or post['person'] }}" placeholder="20-50 person.">
+      </input>
+    </div>
+
+
+    <div class="form-group">
+      <label for="title">Food:</label>
+      <select class="" name="food" value="{{ request.form['food'] }}" >
+        <option value="Seafoods">Seafoods</option>
+        <option value="Korean food">Korean</option>
+        <option value="Italian food">Italian</option>
+        <option value="Pinoy Classic">Pinoy Classic</option>
+        <option value="Unli wings">Unli wings</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="title">Package Description</label>
+      <textarea required placeholder="Enter your package description.." name="description" rows="8" cols="70" value="{{ request.form['description'] or post['description'] }}"></textarea>
+      </input>
+
+      <div class="form-group">
+        <center><button type="submit" class="btn btn-primary">Submit</button></center>
+    </div>
+
+    </div>
+
+
+    
+    </div>
+    </div>
+</form>
+</body>
+</html>
+{% endblock %}

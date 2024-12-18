@@ -1,0 +1,87 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/static/edit.css">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <title>Edit Records</title>
+</head>
+<body>
+  {% block content %}
+
+<a class="back" href="{{ url_for('index')}}"><i class='bx bx-arrow-back'></i></a>
+<form method="post">
+  <div class="container">
+    <div class="form-title">
+      <h1>{% block title %} Edit "{{ post['fullname'] }}" {% endblock %}</h1>
+    </div>
+    <div class="inner-container">
+    <div class="form-group">
+        <label for="title">Fullname</label>
+        <input type="text" required name="fullname" placeholder="Post fullname"
+               class="form-control"
+               value="{{ request.form['fullname'] or post['fullname'] }}">
+        </input>
+    </div>
+    <div class="form-group">
+      <label for="title">Address</label>
+      <input type="text" required name="address" placeholder="Post address"
+             class="form-control"
+             value="{{ request.form['address'] or post['address'] }}">
+      </input>
+    </div>
+    <div class="form-group">
+      <label for="title">Contact Number</label>
+      <input type="number" required name="contact" placeholder="Post contact"
+             class="form-control"
+             value="{{ request.form['contact'] or post['contact'] }}">
+      </input>
+    </div>
+    <div class="form-group">
+      <label for="title">Email Address</label>
+      <input type="text" required name="emailaddress" placeholder=""
+             class="form-control"
+             value="{{ request.form['emailaddress'] or post['emailaddress'] }}">
+      </input>
+
+    </div>
+    <div class="form-group">
+      <label for="title">Date of the Event</label>
+      <input type="date" required name="date" placeholder="Post contact"
+             class="form-control"
+             value="{{ request.form['date'] or post['date'] }}">
+      </input>
+
+    </div>
+    <div class="form-group">
+      <label for="title">Time of the event</label>
+      <input type="time" required name="time" placeholder="Post contact"
+             class="form-control"
+             value="{{ request.form['time'] or post['time'] }}">
+      </input>
+
+    </div>
+
+    <div class="form-group">
+      <label for="title">Status</label>
+      <select id = "package" name="status" value="{{ request.form['package'] }}">
+      <option value = "Pending">Pending</option>
+      <option value = "Deal">Deal</option>
+      <option value = "canceled">canceled</option>
+      <option value = "Event done">Event done</option>
+      </select>
+    </div>
+
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+    </div>
+    </div>
+</form>
+</body>
+</html>
+{% endblock %}

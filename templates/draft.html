@@ -1,0 +1,139 @@
+
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+    <link rel="stylesheet" href="static/static/draft.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="mema">
+      <div class="mema-2">
+        <h1>Event Organizer </h1>
+        <p>Capturing every moments you can cherish...</p>
+      </div>
+      <div class="nav-bar">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="aboutus">Aboutus</a></li>
+          <li><a href="chooseus">Chooseus</a></li>
+          <li><a href="packages">Packages</a></li>
+
+        </ul>
+        <h1>PuTech</h1>
+      </div>
+    </div>
+    <section class="whole">
+      <div class="left">
+    <div class="for-text">
+      <p>Manage your dream event with simple clicks, save your time and money</p>
+      <div class="icon">
+      <span class="iconify" data-icon="ant-design:form-outlined"></span>
+      <p>- Fill-up Form</p>
+      <span class="iconify" data-icon="bx:bx-select-multiple"></span>
+      <p>- Select Category</p>
+      <span class="iconify" data-icon="fluent:handshake-20-regular"></span>
+      <p>- Deal</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="inner-container">
+          <form class="form" method="post" onsubmit="alert('Your record is sent to the organizer, please wait for further update the admin will contact you shortly Thankyou!');">
+            <h1>Form</h1>
+              <div class="fullname">
+                <span>Fullname:</span>
+                <input required type="text" placeholder="Fullname" class="form-control" name="fullname" value="{{ request.form['fullname'] }}">
+              </div>
+                <div class="fullname-1">
+                  <span>Address:</span>
+                  <input required type="text" placeholder="House No. Street Name , Brgy." class="form-control" name="address" value="{{ request.form['address'] }}">
+                </div>
+                <div class="fullname">
+                  <span>Contact No.</span>
+                  <input required type="number" placeholder="+63" class="form-control" name="contact" value="{{ request.form['contact'] }}">
+                </div>
+                <div class="fullname-1">
+                  <span>Email Address:</span>
+                  <input required type="text" placeholder="ex. abc@gmail.com" class="form-control" name="emailaddress" value="{{ request.form['emailaddress'] }}">
+                </div>
+                <div class="fullname">
+                  <span>Age:</span>
+                  <input required type="number" placeholder="18" class="form-control" name="age" value="{{ request.form['age'] }}">
+                </div>
+                <div class="fullname-1">
+                  <label for="cars">Sex:</label> <br>
+                  <select id = "category" name="sex" value="{{ request.form['sex'] }}">
+                  <option value = "Male">Male</option>
+                  <option value = "Female">Female</option>
+                  </select>
+                </div>
+
+                <div class="fullname">
+                  <span>Date of your event:</span>
+                  <input required type="date"  class="form-control" name="date" value="{{ request.form['date'] }}">
+                </div>
+
+                <div class="fullname-1">
+                  <span>Time of your event:</span>
+                  <input required type="time"  class="form-control" name="time" value="{{ request.form['time'] }}">
+                </div>
+
+                <div class="fullname">
+                  <label for="cars">Category:</label> <br>
+                  <select id = "category" name="category" value="{{ request.form['category'] }}">
+                  <option value = "Birthday">Birthday</option>
+                  <option value = "Wedding">Wedding</option>
+                  <option value = "Catering">Catering</option>
+                  </select>
+                </div>
+
+                <div class="fullname-1">
+                  <label for="package">Select Package:</label>
+
+                  <select id = "package" name="package" value="{{ request.form['package'] }}">
+                    {% for post in posts %}
+                  <option value = "{{ post['packagename'] }}">{{ post['packagename'] }}</option>
+                    {% endfor %}
+
+
+                  </select>
+
+                </div>
+
+
+
+
+                <div class="for-category">
+
+
+                <br>
+                  </div>
+                  <div class="last">
+                    <button type="submit" name="button" >Confirm</button>
+
+                  </div>
+
+                </form>
+              </div>
+
+              </div>
+</div>
+
+
+
+            </section>
+
+
+
+
+
+
+
+  </body>
+</html>
+{% endblock %}

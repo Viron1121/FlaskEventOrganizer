@@ -1,0 +1,124 @@
+
+
+{% block content %}
+<!-- <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/css/draft.css">
+    <title></title>
+  </head>
+  <body class="body">
+    <div class="try">
+
+    </div>
+    <div class="mema">
+      <div class="mema-2">
+        <h1>Find your next stay </h1>
+        <p>Capturing every moments you can cherish...</p>
+      </div>
+      <div class="nav-bar">
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="container">
+	<div class="outer-container">
+	</div>
+      <div class="inner-container">
+        <div class="for-image">
+          <img class="mySlides" src="static/images/bday.jpg">
+          <img class="mySlides" src="static/images/4.jpg">
+          <img class="mySlides" src="static/images/6.jpg">
+          <img class="mySlides" src="static/images/7.jpg">
+        </div>
+
+          <form method="post">
+            <h1>Form</h1>
+              <div class="fullname">
+                <span>Fullname</span>
+                <input type="text" placeholder="Fullname" class="form-control" name="fullname" value="{{ request.form['fullname'] }}">
+              </div>
+
+                <div class="fullname">
+                  <span>Address</span>
+                  <input type="text" placeholder="House No. Street Name , Brgy." class="form-control" name="address" value="{{ request.form['address'] }}">
+                </div>
+                <div class="fullname">
+                  <span>Contact No.</span>
+                  <input type="text" placeholder="+63" class="form-control" name="contact" value="{{ request.form['contact'] }}">
+                </div>
+                <div class="fullname">
+                  <span>Email Address</span>
+                  <input type="text" placeholder="ex. abc@gmail.com" class="form-control" name="emailaddress" value="{{ request.form['emailaddress'] }}">
+                </div>
+                <span>Email Address</span>
+                  <input type="text" placeholder="birthday" class="form-control" name="category" value="{{ request.form['category'] }}"><br>
+                  <button type="sumit" name="button">Confirm</button>
+              </div>
+
+              </div>
+              <script>
+                var myIndex = 0;
+                carousel();
+
+                function carousel() {
+                  var i;
+                  var x = document.getElementsByClassName("mySlides");
+                  for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                  }
+                  myIndex++;
+                  if (myIndex > x.length) {myIndex = 1}
+                  x[myIndex-1].style.display = "block";
+                  setTimeout(carousel, 3000); // Change image every 3 seconds
+                }
+                </script>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="static/static/registration.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+
+    <title></title>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="inner-container">
+          <form class="form" method="post">
+            <h1>Registration</h1>
+              <div class="fullname">
+                <span>Fullname</span>
+                <input type="text" placeholder="Fullname" class="form-control" name="fullname" value="{{ request.form['fullname'] }}">
+              </div>
+                <div class="fullname-1">
+                  <span>Username</span>
+                  <input type="text" placeholder="Enter your username" class="form-control" name="username" value="{{ request.form['username'] }}">
+                </div>
+                <div class="fullname">
+                  <span>Password</span>
+                  <input type="text" placeholder="Enter your password" class="form-control" name="password" value="{{ request.form['password'] }}">
+                </div>
+
+                  <div class="last">
+                    <button type="sumit" name="button">Register</button>
+                    <a href="adminlogin"> <button type="button" name="button">Back</button></a>
+
+                  </div>
+                </form>
+              </div>
+
+              </div>
+
+  </body>
+</html>
+{% endblock %}

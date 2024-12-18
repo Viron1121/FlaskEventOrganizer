@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="static/static/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+  </head>
+  <section class="section">
+  <body class="body">
+    <div class="tabs">
+      <ul>
+        <li class="head-tabs"><h1><b>MENU</b></h1></li>
+        <li><a href="index" > <i class='bx bxs-home'></i>Home</a></li>
+        <li><a href="viewpackage" > <i class='bx bx-list-ul'></i>View Package</a></li>
+        <li><a href="addpackage"><i class='bx bxs-add-to-queue'></i>Add New Package</a></li>
+      
+        <li ><a href="{{url_for('adminlogin')}}"><i class='bx bxs-log-out'></i>Logout</a></li>
+      </ul>
+    </div>
+
+
+
+    {% block content %}
+
+     <div id="option2" class="display">
+      <div class="option2">
+        <div class="title">
+          <h1>Add Package</h1>
+        </div>
+        <form method="POST" class="form" action="/addpackage" enctype="multipart/form-data">
+        <div class="for-input">
+          <span>Package Name:</span>
+          <br>
+          <input type="text" required name="packagename" value="{{ request.form['packagename'] }}" placeholder="Enter packagename...">
+          <br>
+          <span>Price:</span>
+          <br>
+          <input type="number" required name="price" placeholder="5,000php" value="{{ request.form['price'] }}">
+          <br>
+          <span>Person:</span>
+          <br>
+          <input type="text" required name="person" value="{{ request.form['person'] }}" placeholder="20-50 person.">
+          <br>
+          <span>Food:</span>
+          <br>
+          <select class="" name="food" value="{{ request.form['food'] }}" >
+            <option value="Seafoods">Seafoods</option>
+            <option value="Korean food">Korean</option>
+            <option value="Italian food">Italian</option>
+            <option value="Pinoy Classic">Pinoy Classic</option>
+            <option value="Unli wings">Unli wings</option>
+          </select>
+          <br>
+          <span>Package Description:</span>
+          <textarea required placeholder="Enter your package description.." name="description" rows="8" cols="80" value="{{ request.form['description'] }}"></textarea>
+          <br>
+          <span>Browse Image</span>
+          <input required type="file" class="form-control" name="upload_image">
+          <button type="submit" name="button" >Add Package</button>
+        </div>
+        
+        
+          </form>
+      
+      </div>
+    </div>
+{% endblock %}
+
+
+  </section>
+
+
+    <script>
+    function opentabs(evt, cityName) {
+    var i, display, tablinks;
+    display = document.getElementsByClassName("display");
+    for (i = 0; i < display.length; i++) {
+    display[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+    }
+    </script>
+
+
+
+    <script>
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    </script>
+  </body>
+</html>

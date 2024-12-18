@@ -1,0 +1,61 @@
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <link rel="stylesheet" href="static/static/draft.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="mema">
+      <div class="mema-2">
+        <h1>Event Organizer </h1>
+        <p>Capturing every moments you can cherish...</p>
+      </div>
+      <div class="nav-bar">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="aboutus">Aboutus</a></li>
+          <li><a href="chooseus">Chooseus</a></li>
+          <li><a href="packages">Packages</a></li>
+
+
+        </ul>
+        <h1>PuTech</h1>
+      </div>
+    </div>
+
+    <section id="packages">
+      <div class="box">
+        <div class="box-text">
+          <h1>PACK<span>AGES</span></h1>
+        </div>
+        {% for post in posts %}
+        <div class="packages-wedding" >
+          <div class="num1">
+          <h1>{{ post['packagename'] }}</h1>
+          <div class="items-pic">
+            <img src="static/images/{{post['img']}}" id="myimg" alt="No Image">
+          </div>
+
+          <div class="items-description">
+
+            <p>Can accomodate: {{ post['person'] }} person</p>
+            <p>Food Theme for the Event: {{ post['food'] }}</p>
+            <p>Description:<br> {{ post['description'] }}</p>
+            <p>Fixed Price: {{ post['price'] }}</p>
+
+          </div>
+        </div>
+        </div>
+
+        {% endfor %}
+
+
+    </section>
+
+
+  </body>
+</html>
+{% endblock %}

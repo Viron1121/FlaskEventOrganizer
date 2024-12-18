@@ -1,0 +1,63 @@
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <link rel="stylesheet" href="static/static/draft.css">
+    <title></title>
+  </head>
+  <body>
+    <div class="mema">
+      <div class="mema-2">
+        <h1>Event Organizer </h1>
+        <p>Capturing every moments you can cherish...</p>
+      </div>
+      <div class="nav-bar">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="aboutus">Aboutus</a></li>
+          <li><a href="chooseus">Chooseus</a></li>
+          <li><a href="packages">Packages</a></li>
+
+        </ul>
+        <h1>PuTech</h1>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="text">
+        <h1>Why Choose Us?</h1>
+        <p>Our event organizing system automates and simplifies the entire event planning process.
+          Starting with sourcing your venue and ending with custom dashboards and reports after your event.
+          We have everything covered.</p>
+      </div>
+
+      <div class="slideshow">
+        {% for post in posts %}
+         <img class="mySlides" src="static/images/{{post['img']}}"  alt="No Image">
+        {% endfor %}
+      </div>
+
+
+    </div>
+
+    <script>
+              var myIndex = 0;
+              carousel();
+
+              function carousel() {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                for (i = 0; i < x.length; i++) {
+                  x[i].style.display = "none";
+                }
+                myIndex++;
+                if (myIndex > x.length) {myIndex = 1}
+                x[myIndex-1].style.display = "block";
+                setTimeout(carousel, 3000); // Change image every 3 seconds
+              }
+    </script>
+  </body>
+</html>
+{% endblock %}
